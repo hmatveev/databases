@@ -1,0 +1,47 @@
+1. Развернул удалённый сервер https://take.ms/N9iKM
+2. Установил на нём mysql-server
+
+ubuntu@ip-172-31-23-75:~$ service mysql status 
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2020-08-28 19:05:56 UTC; 10min ago
+   Main PID: 10626 (mysqld)
+     Status: "Server is operational"
+      Tasks: 39 (limit: 1134)
+     Memory: 323.7M
+     CGroup: /system.slice/mysql.service
+             └─10626 /usr/sbin/mysqld
+
+Aug 28 19:05:55 ip-172-31-23-75 systemd[1]: Starting MySQL Community Server...
+Aug 28 19:05:56 ip-172-31-23-75 systemd[1]: Started MySQL Community Server.
+
+3. Создал на нём пользователя 
+
+mysql> select user from mysql.user;
++------------------+
+| user             |
++------------------+
+| debian-sys-maint |
+| hmatveev         |
+| mysql.infoschema |
+| mysql.session    |
+| mysql.sys        |
+| root             |
++------------------+
+6 rows in set (0.00 sec)
+
+4. Создал на нём базу данных
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| geekbrains         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+5. Подключился через DataGrip https://take.ms/AXeOe
